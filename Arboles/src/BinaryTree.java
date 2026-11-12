@@ -67,6 +67,14 @@ public class BinaryTree {
         return true;
     }
 
+    /** Lee una linea; si la entrada se termino devuelve "" (hijo inexistente). */
+    private String readLine(Scanner scanner) {
+        if (!scanner.hasNextLine()) {
+            return "";
+        }
+        return scanner.nextLine().trim();
+    }
+
     /**
      * Construye el arbol leyendo por consola: primero la raiz y luego, por
      * niveles, el hijo izquierdo y derecho de cada nodo. Linea vacia o "-"
@@ -76,7 +84,7 @@ public class BinaryTree {
         root = null;
 
         System.out.print("Raiz: ");
-        String text = scanner.nextLine().trim();
+        String text = readLine(scanner);
         if (text.isEmpty() || text.equals("-")) {
             System.out.println("No se ingreso raiz: el arbol queda vacio.");
             return;
@@ -92,14 +100,14 @@ public class BinaryTree {
             TreeNode current = queue.poll();
 
             System.out.print("Hijo izquierdo de " + current.data + ": ");
-            String l = scanner.nextLine().trim();
+            String l = readLine(scanner);
             if (!l.isEmpty() && !l.equals("-")) {
                 current.left = new TreeNode(l);
                 queue.add(current.left);
             }
 
             System.out.print("Hijo derecho de " + current.data + ": ");
-            String r = scanner.nextLine().trim();
+            String r = readLine(scanner);
             if (!r.isEmpty() && !r.equals("-")) {
                 current.right = new TreeNode(r);
                 queue.add(current.right);

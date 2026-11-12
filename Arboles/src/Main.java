@@ -24,9 +24,7 @@ public class Main {
         a.left.left.left = new TreeNode("H");
         a.left.left.right = new TreeNode("I");
 
-        // Un solo Scanner para todo el programa (varios Scanner sobre
-        // System.in pueden perder datos del buffer).
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // para leer la opcion del menu
         int option = 0;
 
         while (option != 8) {
@@ -56,7 +54,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    tree.buildTree(scanner);
+                    tree.buildTree(new Scanner(System.in));
                     System.out.println();
                     tree.printTree();
                     break;
