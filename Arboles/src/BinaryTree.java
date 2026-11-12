@@ -404,6 +404,12 @@ public class BinaryTree {
         List<Object> bad = unbalancedNodes();
         if (bad.isEmpty()) {
             System.out.println("Ninguno: el arbol ya es AVL.");
+            System.out.println();
+            System.out.println("--- 3. Rotaciones aplicadas ---");
+            System.out.println("Ninguna.");
+            System.out.println();
+            System.out.println("--- 4. Arbol despues del balanceo (con factores de equilibrio) ---");
+            printBalanceFactors();
             return;
         }
         System.out.println(bad);
